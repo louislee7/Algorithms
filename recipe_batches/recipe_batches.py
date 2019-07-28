@@ -3,7 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
+  for x in recipe:
+    if x in ingredients:
+      batches.append(int(ingredients[x] // recipe[x]))
+    else:
+      return 0
+  return min(batches)
 
 
 if __name__ == '__main__':

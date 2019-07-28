@@ -3,7 +3,16 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  count = 0
+  if amount < 0:
+    return 0
+  elif amount == 0:
+    return 1
+  else:
+    for n in range(0, len(denominations)):
+      count += making_change(amount - denominations[n], denominations[n:])
+    return count
+
 
 
 if __name__ == "__main__":
